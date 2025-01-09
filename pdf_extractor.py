@@ -11,7 +11,7 @@ import re
 from datetime import datetime
 
 
-# Install missing libraries
+# Installing missing libraries using this function
 def install_missing_packages():
     
     requirements_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "requirements.txt")
