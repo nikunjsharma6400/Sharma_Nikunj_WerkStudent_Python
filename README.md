@@ -7,18 +7,24 @@ The pdf_extractor.py to extract dates and values from the given 2 PDF invoices a
 
 ## Task Details
 
-1. **Data Extraction**:
-    - Extract specific values from three sample invoices.
-    - For Sample 1, extract the value shown in the provided image.
-    - <img width="289" alt="image" src="https://github.com/user-attachments/assets/0cf000ff-c305-4ffe-beb4-1c02a04d06b6" />
-    - For Samples 2, extract the value shown in the provided image.
-    - <img width="497" alt="image" src="https://github.com/user-attachments/assets/ea6eb368-604d-4dd4-9235-fbc8ec36d275" />
+1. **Requirnments**:
+      - pandas for data manipulation
+      - PyPDF2 for pdf reading
+      - openpyxl for processing files in excel
+    
+    Note: All these are libraries are designed to be auto installable using requirements.txt file.
 
-2. **Excel File Creation**:
-    - Create an Excel file with two sheets:
-        - **Sheet 1**: Contains three columns - File Name, Date (scraped from the document), and Value.
-        - **Sheet 2**: Contains a pivot table with the date and value sum, and also by document name.
+2. **Code Process**:
+    - 2.1 Installation of Missing Libraries
+        - install_missing_packages() function automatically install missing libraries listed in requirements.txt, if one doesn't have them already installed.
 
+    - 2.2 PDF Data Extraction
+        - extract_date_and_value() function takes pdf file's location as input and extracts date and billing amount from the files. To get these values it searches the pdf text against the given condition and
+          come with the said details. 
+
+     - 2.3 Data storage
+         - process_pdfs() function stores data extracted in the last step into csv and excel files. It is also responsible for creation of the pivot table and its formatting.
+           
 3. **CSV File Creation**:
     - Create a CSV file with all the data, including headers, and use a semicolon (;) as the separator.
 
